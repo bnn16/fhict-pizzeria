@@ -1,0 +1,65 @@
+
+<html>
+    <head>
+        <title>Orders</title>
+        <meta http-equiv="refresh" content="2;URL=http://localhost:5000/" />
+    </head>
+    <body>
+        <form action="/remove" method="post">
+            <input type = "submit" value = "Remove Top Order">
+        </form>
+        <h1>Orders</h1>
+        
+                {% for order_number in Orders %}
+                {% if Orders[order_number]["order_number"]>0 %}
+                <h2>Order Number: {{Orders[order_number]["order_number"]}}</h2>
+                    {% if Orders[order_number]["magherita"]>0 %}
+                    <p>Magherita {{Orders[order_number]["magherita"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["nepoletana"]>0 %}
+                    <p>Napoletana {{Orders[order_number]["nepoletana"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["siciliana"]>0 %}
+                    <p>Siciliana {{Orders[order_number]["siciliana"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["farro"]>0 %}
+                    <p>Farro Salad {{Orders[order_number]["farro"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["Bitalian"]>0 %}
+                    <p>Big Italian Salad {{Orders[order_number]["Bitalian"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["ceasers"]>0 %}
+                    <p>Ceasers Salad {{Orders[order_number]["ceasers"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["lasagna"]>0 %}
+                    <p>Lasagna {{Orders[order_number]["lasagna"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["corbonara"]>0 %}
+                    <p>S Carbonara {{Orders[order_number]["corbonara"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["ragu"]>0 %}
+                    <p>S al Ragu {{Orders[order_number]["ragu"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["gelato"]>0 %}
+                    <p>Gelato {{Orders[order_number]["gelato"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["tiramisu"]>0 %}
+                    <p>Tiramisu {{Orders[order_number]["tiramisu"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["PC"]>0 %}
+                    <p>Panna Cotta {{Orders[order_number]["PC"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["lemonade"]>0 %}
+                    <p>Lemonade {{Orders[order_number]["lemonade"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["coke"]>0 %}
+                    <p>Coke {{Orders[order_number]["coke"]}}x</p>
+                    {% endif %}
+                    {% if Orders[order_number]["water"]>0 %}
+                    <p>Water {{Orders[order_number]["water"]}}x</p>
+                    {% endif %}
+                    {% endif %}
+                {% endfor %}
+            
+    </body>
+</html>
