@@ -15,6 +15,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -27,7 +28,7 @@
         Mario<br />&<br />
         Luigi's Pizza.
       </h1>
-      <img id="phone" src="/img/phone.png" alt="phone" />
+      <img id="phone" src="./img/phone.png" alt="phone" />
       <p id="phone-num">+31402483060</p>
     </div>
 
@@ -41,11 +42,19 @@
     >
       <span class="glyphicon glyphicon-shopping-cart"></span>
     </button>
-
+    <center>
+      <nav id="menu-nav">
+        <button id="pizza-button">Pizzas</button>
+        <button id="salad-button">Salads</button>
+        <button id="pasta-button">Pasta</button>
+        <button id="dessert-button">Desserts</button>
+        <button id="drinks-button">Drinks</button>
+      </nav>
+    </center>
     <div class="container">
       <div class="row">
         <div class="col col-md-4">
-          <div id="cards" class="card">
+          <div id="cards-pizza" class="card">
             <img
               id="pizza1"
               class="card-img-top"
@@ -71,7 +80,7 @@
           </div>
         </div>
         <div class="col col-md-4">
-          <div id="cards" class="card">
+          <div id="cards-pizza" class="card">
             <img
               id="pizza2"
               class="card-img-top"
@@ -98,7 +107,7 @@
           </div>
         </div>
         <div class="col col-md-4">
-          <div id="cards" class="card">
+          <div id="cards-pizza" class="card">
             <img
               id="pizza3"
               class="card-img-top"
@@ -116,6 +125,324 @@
                 href="#"
                 data-name="siciliana"
                 data-price="14"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-salad" class="card">
+            <img
+              id="pizza2"
+              class="card-img-top"
+              src="./img/farro.png"
+              alt="salad1 card"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Farro Salad</h4>
+              <p>
+                with sautéed onion, carrots and celery.<br />
+                Price: $10
+              </p>
+              <a
+                href="#"
+                data-name="farro"
+                data-price="10"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-md-4">
+          <div id="cards-salad" class="card">
+            <img
+              id="pizza3"
+              class="card-img-top"
+              src="./img/ceaser.png"
+              alt="ceaser card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Ceasers Salad</h4>
+              <p>
+                garlic, anchovies, and croutons and dressed with olive oil,
+                coddled egg, lemon juice, and grated cheese.<br />
+                Price: $9
+              </p>
+              <a
+                href="#"
+                data-name="ceaser"
+                data-price="9"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-md-4">
+          <div id="cards-salad" class="card">
+            <img
+              id="pizza2"
+              class="card-img-top"
+              src="./img/italian.png"
+              alt="ceaser card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Big Italian Salad</h4>
+              <p>
+                with lettuce, celery, onion, peperoncini, olives and cherry
+                tomatoes<br />
+                Price: $11
+              </p>
+              <a
+                href="#"
+                data-name="italian"
+                data-price="11"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-pasta" class="card">
+            <img
+              id="pizza2"
+              class="card-img-top"
+              src="./img/lasagna.png"
+              alt="salad1 card"
+              style="width: 290px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Lasagna</h4>
+              <p>
+                with a rich meat sauce and a creamy besciamella white sauce,
+                plus the perfect amount of mozzarella cheese<br />
+                Price: $15
+              </p>
+              <a
+                href="#"
+                data-name="lasagna"
+                data-price="15"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-pasta" class="card">
+            <img
+              id="pizza3"
+              class="card-img-top"
+              src="./img/carbonara.png"
+              alt="carbonara card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Carbonara</h4>
+              <p>
+                with eggs, hard cheese, cured pork and black pepper. <br />
+                Price: $12
+              </p>
+              <a
+                href="#"
+                data-name="carbonara"
+                data-price="12"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-pasta" class="card">
+            <img
+              id="pizza3"
+              class="card-img-top"
+              src="./img/bolognese.png"
+              alt="bolognese card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Spaghetti al ragù</h4>
+              <p>
+                with original ragù.<br />
+                Price: $13
+              </p>
+              <a
+                href="#"
+                data-name="ragu"
+                data-price="13"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-md-4">
+          <div id="cards-dessert" class="card">
+            <img
+              id="pizza1"
+              class="card-img-top"
+              src="./img/icecream.png"
+              alt="icecream card"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Gelato</h4>
+              <p>
+                with milk, cream, various sugars, and ingredients such as fresh
+                fruit and nut purees. <br />
+                Price: $5
+              </p>
+              <a
+                href="#"
+                data-name="gelato"
+                data-price="5"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-dessert" class="card">
+            <img
+              id="pizza3"
+              class="card-img-top"
+              src="./img/tirami.png"
+              alt="tiramisu card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Tiramisu</h4>
+              <p>
+                ladyfingers dipped in coffee, layered with a whipped mixture of
+                eggs, sugar, and mascarpone cheese, flavoured with cocoa. <br />
+                Price: $7
+              </p>
+              <a
+                href="#"
+                data-name="tiramisu"
+                data-price="7"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-dessert" class="card">
+            <img
+              id="pizza1"
+              class="card-img-top"
+              src="./img/panna.png"
+              alt="panna card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Panna Cotta</h4>
+              <p>
+                mixture of sweetened cream and gelatine. <br />
+                Price: $4
+              </p>
+              <a
+                href="#"
+                data-name="panna"
+                data-price="4"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-drinks" class="card">
+            <img
+              id="pizza1"
+              class="card-img-top"
+              src="./img/lemonade.png"
+              alt="lemonade card"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Lemonade</h4>
+              <p>
+                is a sweetened lemon-flavored beverage. <br />
+                Price: $2
+              </p>
+              <a
+                href="#"
+                data-name="lemoande"
+                data-price="2"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-drinks" class="card">
+            <img
+              id="pizza3"
+              class="card-img-top"
+              src="./img/cola.png"
+              alt="tiramisu card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Coca Cola</h4>
+              <p>
+                ladyfingers dipped in coffee, layered with a whipped mixture of
+                eggs, sugar, and mascarpone cheese, flavoured with cocoa. <br />
+                Price: $2
+              </p>
+              <a
+                href="#"
+                data-name="cola"
+                data-price="2"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards-drinks" class="card">
+            <img
+              id="pizza1"
+              class="card-img-top"
+              src="./img/water.png"
+              alt="panna card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Water</h4>
+              <p>
+                Just plain tap water in a special watter bottle. <br />
+                Price: Free
+              </p>
+              <a
+                href="#"
+                data-name="water"
+                data-price="0"
                 class="add-to-cart btn btn-primary"
                 id="add-cart"
                 >Add to cart</a
@@ -157,6 +484,7 @@
   </body>
 </html>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="modal.js"></script>
