@@ -1,0 +1,86 @@
+body {
+  font-family: 'Hubballi', cursive;
+  background-color: #f2e8cf;
+  margin: 0;
+  padding: 0;
+}
+
+#logo {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  left: 0px;
+  top: 0px;
+}
+
+#rect {
+  position: absolute;
+  height: 54.5vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  left: 0px;
+  top: 362px;
+  background: #d73833;
+}
+#title {
+  position: absolute;
+  width: 871px;
+  height: 192px;
+  left: 320px;
+  top: 200px;
+
+  font-family: 'Hubballi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 96px;
+  text-align: center;
+
+  color: #6a994e;
+}
+#subtext {
+  position: absolute;
+  width: 770px;
+  height: 57px;
+  left: 373px;
+  top: 0px;
+  margin-top: 0px;
+
+  font-family: 'Hubballi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 57px;
+  text-align: center;
+  color: #f2e8cf;
+}
+#button {
+  font-family: 'Hubballi', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 425px;
+  top: 480px;
+  font-size: 70px;
+  padding: 15px 31px;
+  width: 662px;
+  height: 150px;
+  color: #ffffff;
+  background: #386641;
+  border: 0;
+  box-shadow: 0px 2px 0px #f2e8cf;
+  border-radius: 10px;
+}
+
+#button:active {
+  background: #f2e8cf;
+  color: #386641;
+  box-shadow: 0px 2px 0px #386641;
+}
+#button:hover {
+  background: #f2e8cf;
+  color: #386641;
+  box-shadow: 0px 2px 0px #386641;
+}

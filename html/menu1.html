@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="menu1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="./img/oven.jpeg" class="gfg" />
+    <!-- todo :: hero image, navbar for menu +recepies -->
+
+    <div id="header">
+      <img id="logo" src="img/image-removebg-preview.png" alt="logo" />
+      <h1 id="logo-name">
+        Mario<br />&<br />
+        Luigi's Pizza.
+      </h1>
+      <img id="phone" src="/img/phone.png" alt="phone" />
+      <p id="phone-num">+31402483060</p>
+    </div>
+
+    <!-- modal window -->
+    <button
+      id="open-modal"
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#cart"
+    >
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+    </button>
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-4">
+          <div id="cards" class="card">
+            <img
+              id="pizza1"
+              class="card-img-top"
+              src="./img/margh.png"
+              alt="pizza1 card"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Pizza Margherita</h4>
+              <p>
+                a variety of pizza topped with tomato, basil, and mozzarella
+                cheese.<br />
+                Price: $10
+              </p>
+              <a
+                href="#"
+                data-name="margherita"
+                data-price="10"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards" class="card">
+            <img
+              id="pizza2"
+              class="card-img-top"
+              src="./img/pizza.png"
+              alt="pizza2 card"
+              style="right: 20px"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Pizza Napoletana</h4>
+              <p>
+                with raw tomatoes, fresh mozzarella cheese, fresh basil, and
+                olive oil.<br />
+                Price: $12
+              </p>
+              <a
+                href="#"
+                data-name="napoletana"
+                data-price="12"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div id="cards" class="card">
+            <img
+              id="pizza3"
+              class="card-img-top"
+              src="./img/sici.png"
+              alt="pizza1 card"
+            />
+            <div class="card-block">
+              <h4 class="card-title">Pizza Siciliana</h4>
+              <p>
+                with a meatless sauce made from tomatoes, onions, herbs, and
+                anchovies<br />
+                Price: $14
+              </p>
+              <a
+                href="#"
+                data-name="siciliana"
+                data-price="14"
+                class="add-to-cart btn btn-primary"
+                id="add-cart"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-overlay">
+      <div id="modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Cart</h2>
+          <button
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            id="close-modal"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+
+        <button
+          id="order-now"
+          onclick="window.location='order.html'"
+          type="button"
+          class="btn btn-primary"
+        >
+          Order
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="modal.js"></script>
