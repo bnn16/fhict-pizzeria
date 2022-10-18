@@ -112,7 +112,6 @@ const shoppingCart = (function () {
   // Private methods and propeties
   // =============================
   cart = [];
-
   // Constructor
   function Item(name, price, count) {
     this.name = name;
@@ -247,7 +246,6 @@ $('.add-to-cart').click(function (event) {
   let name = $(this).data('name');
   let price = Number($(this).data('price'));
   shoppingCart.addItemToCart(name, price, 1);
-  console.log(cart);
   displayCart();
 });
 
@@ -343,17 +341,28 @@ displayCart();
 //     },
 //   });
 // }
+let clear = (arr, num) => {
+  while (arr.length > 0) {
+    arr.pop();
+  }
+  num += 1;
+};
+let orderNumber1 = 1;
+let test = [];
 
 document.getElementById('order-now').addEventListener('click', function () {
+  test = cart.map((v) => Object.assign(v, { orderNum: orderNumber1 }));
+  console.log(test);
   $.ajax({
     type: 'POST',
     contentType: 'application/json',
-    data: JSON.stringify(cart),
+    data: JSON.stringify(test),
     dataType: 'json',
     url: 'http://145.93.177.83:5000/index',
     success: function (e) {
       console.log(e);
       shoppingCart.clearCart();
+      clear(test, orderNumber1);
       window.location = '';
     },
     error: function (error) {
