@@ -341,11 +341,10 @@ displayCart();
 //     },
 //   });
 // }
-let clear = (arr, num) => {
+let clear = (arr) => {
   while (arr.length > 0) {
     arr.pop();
   }
-  num += 1;
 };
 let orderNumber1 = 1;
 let test = [];
@@ -362,7 +361,8 @@ document.getElementById('order-now').addEventListener('click', function () {
     success: function (e) {
       console.log(e);
       shoppingCart.clearCart();
-      clear(test, orderNumber1);
+      clear(test);
+      orderNumber1 = orderNumber1 + 1;
       window.location = '';
     },
     error: function (error) {
