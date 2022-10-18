@@ -113,10 +113,10 @@ const shoppingCart = (function () {
   // =============================
   cart = [];
   // Constructor
-  function Item(name, price, count) {
+  function Item(name, price, amount) {
     this.name = name;
     this.price = price;
-    this.count = count;
+    this.amount = amount;
   }
 
   // Save cart
@@ -138,23 +138,23 @@ const shoppingCart = (function () {
   let obj = {};
 
   // Add to cart
-  obj.addItemToCart = function (name, price, count) {
+  obj.addItemToCart = function (name, price, amount) {
     for (let item in cart) {
       if (cart[item].name === name) {
-        cart[item].count++;
+        cart[item].amount++;
         saveCart();
         return;
       }
     }
-    let item = new Item(name, price, count);
+    let item = new Item(name, price, amount);
     cart.push(item);
     saveCart();
   };
   // Set count from item
-  obj.setCountForItem = function (name, count) {
+  obj.setCountForItem = function (name, amount) {
     for (let i in cart) {
       if (cart[i].name === name) {
-        cart[i].count = count;
+        cart[i].amount = amount;
         break;
       }
     }
@@ -163,8 +163,8 @@ const shoppingCart = (function () {
   obj.removeItemFromCart = function (name) {
     for (let item in cart) {
       if (cart[item].name === name) {
-        cart[item].count--;
-        if (cart[item].count === 0) {
+        cart[item].amount--;
+        if (cart[item].amount === 0) {
           cart.splice(item, 1);
         }
         break;
@@ -194,7 +194,7 @@ const shoppingCart = (function () {
   obj.totalCount = function () {
     let totalCount = 0;
     for (let item in cart) {
-      totalCount += cart[item].count;
+      totalCount += cart[item].amount;
     }
     return totalCount;
   };
@@ -203,7 +203,7 @@ const shoppingCart = (function () {
   obj.totalCart = function () {
     let totalCart = 0;
     for (let item in cart) {
-      totalCart += cart[item].price * cart[item].count;
+      totalCart += cart[item].price * cart[item].amount;
     }
     return Number(totalCart.toFixed(2));
   };
@@ -217,7 +217,7 @@ const shoppingCart = (function () {
       for (p in item) {
         itemCopy[p] = item[p];
       }
-      itemCopy.total = Number(item.price * item.count).toFixed(2);
+      itemCopy.total = Number(item.price * item.amount).toFixed(2);
       cartCopy.push(itemCopy);
     }
     return cartCopy;
@@ -273,7 +273,7 @@ function displayCart() {
       "<input type='number' class='item-count form-control' data-name='" +
       cartArray[i].name +
       "' value='" +
-      cartArray[i].count +
+      cartArray[i].amount +
       "'>" +
       "<button class='plus-item btn btn-primary input-group-addon' data-name=" +
       cartArray[i].name +
@@ -316,8 +316,8 @@ $('.show-cart').on('click', '.plus-item', function () {
 // Item count input
 $('.show-cart').on('change', '.item-count', function () {
   let name = $(this).data('name');
-  let count = Number($(this).val());
-  shoppingCart.setCountForItem(name, count);
+  let amount = Number($(this).val());
+  shoppingCart.setCountForItem(name, amount);
   displayCart();
 });
 
