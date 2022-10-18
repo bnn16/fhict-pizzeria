@@ -351,7 +351,7 @@ let orderNumber1 = 1;
 let test = [];
 
 document.getElementById('order-now').addEventListener('click', function () {
-  test = cart.map((v) => Object.assign(v, { orderNum: orderNumber1 }));
+  test = cart.map((v) => ({ ...v, orderNum: orderNumber1 }));
   console.log(test);
   $.ajax({
     type: 'POST',
