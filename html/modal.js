@@ -325,12 +325,26 @@ $('.show-cart').on('change', '.item-count', function () {
 
 displayCart();
 
-const postData = function () {
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://145.93.177.83:5000/data');
 
-  console.log(JSON.stringify(cart));
-  xhr.send(JSON.stringify(cart));
-};
+$(document).ready( function() {
+  $('#order-now').click(function() {
+  $.ajax({
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(formdata),
+    dataType: 'json',
+    url: 'http://145.93.177.83:5000/index',
+    success: function (e) {
+      console.log(e);
+      shoppingCart.clearCart();
+      window.location = '';
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
+}
 
-document.getElementById('order-now').addEventListener('click', postData());
+
+
+// document.getElementById('order-now').addEventListener('click', postData());
