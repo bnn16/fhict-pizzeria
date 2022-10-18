@@ -325,13 +325,30 @@ $('.show-cart').on('change', '.item-count', function () {
 
 displayCart();
 
+// $(document).ready( function() {
+//   $('#order-now').click(function() {
+//   $.ajax({
+//     type: 'POST',
+//     contentType: 'application/json',
+//     data: JSON.stringify(formdata),
+//     dataType: 'json',
+//     url: 'http://145.93.177.83:5000/index',
+//     success: function (e) {
+//       console.log(e);
+//       shoppingCart.clearCart();
+//       window.location = '';
+//     },
+//     error: function (error) {
+//       console.log(error);
+//     },
+//   });
+// }
 
-$(document).ready( function() {
-  $('#order-now').click(function() {
+document.getElementById('order-now').addEventListener('click', function () {
   $.ajax({
     type: 'POST',
     contentType: 'application/json',
-    data: JSON.stringify(formdata),
+    data: JSON.stringify(cart),
     dataType: 'json',
     url: 'http://145.93.177.83:5000/index',
     success: function (e) {
@@ -343,8 +360,4 @@ $(document).ready( function() {
       console.log(error);
     },
   });
-}
-
-
-
-// document.getElementById('order-now').addEventListener('click', postData());
+});
