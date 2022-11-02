@@ -1,20 +1,108 @@
+<head>
+    <title>Orders</title>
+    <meta http-equiv="refresh" content="5;URL=http://localhost:5000" />
 
-<html>
-    <head>
-        <title>Orders</title>
-        <meta http-equiv="refresh" content="2;URL=http://localhost:5000/" />
-    </head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="feedback.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu1.css')}}">
+<title>Pick-up</title>
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='Images/oven.jpeg')}}" class="gfg" />
+    <div id="header">
+        <img id="logo" src="{{ url_for('static', filename='Images/image-removebg-preview.png')}}" alt="logo" />
+        <h1 id="logo-name">
+          Mario<br />&<br />
+          Luigi's Pizza.
+        </h1>
+        <img id="phone" src="{{ url_for('static', filename='Images/Phone.png')}}" alt="phone" />
+        <p id="phone-num">+31402483060</p>
+      </div>
+
+    
+
+    <div class="container">
+        <div class="row">
     <body>
-        <form action="/remove" method="post">
-            <input type = "submit" value = "Remove Top Order">
-        </form>
-        <h1>Orders</h1>
         
-                {% for order_number in Orders %}
+
+        <div class="col col-md-4">
+            <div id="cards2" class="card">
+              <div class="card-block">
+                <h4 class="card-title">
+
+                    <form action="/remove" method="post">
+                        <input type = "submit" value = "Top order prepared" id = "button2">
+                    </form>
+
+        <h1>Orders</h1>
+
+        <!-- <h2>allNumberQuantity: {{ allNumberQuantity }}</h2>
+
+        <h2>Order numbers: {{ orderNumbers }}</h2>
+
+        <h2>Order Indexes: {{ orderIndexes }}</h2>
+
+        <h1>{{ damnList }}</h1>
+
+        <h2>nameQuantity[0]: {{ allNumberQuantity[0] }}</h2> -->
+
+
+        {% for Index in orderIndexes %}
+            <!-- <h2>Order Number: {{ order_number }}</h2>
+            <h1>orderIndex: {{ orderIndex }}</h1> -->
+            <h2><b>Client Order:</b></h2>
+            {% for food in allNumberQuantity[Index] %}
+                <h2>{{ food }}</h2>
+            {% endfor %}
+            <br>
+            <br>
+            <br>
+        {% endfor %}
+
+            </div>
+        </div>
+        </div>
+
+        <div class="col col-md-4">
+            <div id="cards3" class="card">
+              <div class="card-block">
+                <h4 class="card-title">
+
+                    <h1><b>Oven Stats</b></h1>
+                    <h2>Temperature: <br>{{ temperature }} °C</h2>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <form action="/oven" method="post">
+          <input type = "submit" value = "Activate Oven" id = "button4">
+      </form>
+
+                <!-- {% for order_number in Orders %}
                     <h2>Order Number: {{order_number}}</h2>
                         {% for name in Orders[order_number] %}
                         <p>{{Orders[order_number]['name']}} {{Orders[order_number]['amount']}}x</p>
+                        <h2><br>{{ name }} x {{ amount }}</h2>
+                        <hr>
+                        <h2>{{ currentNames }}</h2>
+                        <h2>{{ currentAmounts }}</h2>
                         {% endfor %}
-                {% endfor %}
+                {% endfor %} -->
+
     </body>
 </html>
