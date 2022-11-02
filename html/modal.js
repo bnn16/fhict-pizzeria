@@ -346,11 +346,11 @@ let clear = (arr) => {
     arr.pop();
   }
 };
-let orderNumber1 = 1;
+
 let test = [];
 
 document.getElementById('order-now').addEventListener('click', function () {
-  test = cart.map((v) => ({ ...v, orderNum: orderNumber1 }));
+  test = cart;
   console.log(test);
   $.ajax({
     type: 'POST',
@@ -362,7 +362,7 @@ document.getElementById('order-now').addEventListener('click', function () {
       console.log(e);
       shoppingCart.clearCart();
       clear(test);
-      orderNumber1 = orderNumber1 + 1;
+
       window.location = '';
     },
     error: function (error) {
