@@ -1,2 +1,2 @@
 # fhict-pizzeria
-This is the repo for the Group project of FHICT
+This is the repo for the first group project of FHICT
